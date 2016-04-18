@@ -10,6 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
                     resource.save
                 end
             end
+        end
     end
     
 end
