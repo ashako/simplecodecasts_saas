@@ -28,10 +28,10 @@ class ProfilesController < ApplicationController
             @profile = @user.profile
             if @profile.update_attributes(profile_params)
                 flash[:success] = "Profile Updated!"
-        redirect_to user_path( params[:user_id] )
-        else
-            render action: :edit
-        end
+                redirect_to user_path( params[:user_id] )
+            else
+                render action: :edit
+            end
     end
     private
        def profile_params
@@ -42,6 +42,5 @@ class ProfilesController < ApplicationController
            @user = User.find( params[:user_id] )
            redirect_to(root_url) unless @user == current_user
                
-           end
        end
 end
